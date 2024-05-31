@@ -1,0 +1,11 @@
+# Condiciones establecidas al negociar
+- En el caso de que un **tercero se una** a la persecución
+- En el caso de que se **ponga en riesgo la vida de cualquier civil o agente** circulando durante más de *15 segundos* en dirección contraria
+- Si se *invade el carril contrario* en **más de 10 ocasiones**
+- Si **abren fuego contra cualquier civil, agente u objeto material** durante la persecución
+- Si se realiza un **cambio de vehículo** ya sea de tierra, mar o aire
+- En el caso de que se introduzca por una **zona por donde el patrulla no quepa**
+- Si durante la persecución ha destruido abundante mobiliario urbano
+- Si se **baja del vehículo** sin las manos levantadas y con la **clara intención de huir**
+- **En caso nocturno** cuando se **circule con las luces apagadas**
+- Cuando tenga **clara tentativa de tirarse al agua con el vehículo** *(se aproxima de forma evidente a una zona donde exista la posibilidad de tirarse al agua)*

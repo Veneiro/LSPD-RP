@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+header a {
+    margin: 0 10px;
+    color: #333;
+}
+h1 {
+    color: #007bff;
+}
+.search-container {
+    margin-bottom: 20px;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode header {
+    background-color: #444;
+}
+
+body.dark-mode a {
+    color: #ddd;
+}
+
+body.dark-mode h3 {
+    color: #0cf;
+}
