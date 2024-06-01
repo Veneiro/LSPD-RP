@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ComboBox</title>
-        <script src="https://cdn.jsdelivr.net/npm/marked@1.2.9/marked.min.js"></script>
-        <script src="codigos.js" defer></script>
-        <script src="modo_oscuro.js" defer></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style_codigos.css">
-    </head>
-    <body class="p-5">
-        <header>
-            <div class="container">
-                <a href="index.html">Inicio</a>
-                <a href="codigos.html">Códigos</a>
-                <button id="toggle-theme" class="btn btn-secondary float-right">Cambiar a modo oscuro</button>
-            </div>
-        </header>
-        <div class="container">
-                <h1>Buscador de códigos policiales LSPD</h1>
-                <div class="search-container">
-                    <input type="text" class="search-input form-control" id="search-input" placeholder="Buscar código">
-                </div>
-                <div class="results-container" id="results-container"></div>
-        </div>
-    </body>
+  <head>
+    <title>ComboBox</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked@1.2.9/marked.min.js"></script>
+    <script src="codigos.js" defer></script>
+    <script src="modo_oscuro.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style_codigos.css" />
+  </head>
+  <body class="p-5">
+    <header class="container">
+      <a href="index.html">Inicio</a>
+      <a href="codigos.html">Códigos</a>
+      <button id="toggle-theme" class="btn btn-secondary float-right">
+        ☀️
+      </button>
+    </header>
+    <div class="container">
+      <h1>Buscador de códigos policiales LSPD</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input form-control"
+          id="search-input"
+          placeholder="Buscar código"
+        />
+      </div>
+      <div class="results-container" id="results-container"></div>
+    </div>
+  </body>
 </html>

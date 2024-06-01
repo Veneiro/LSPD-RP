@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>ComboBox</title>
     <script src="https://cdn.jsdelivr.net/npm/marked@1.2.9/marked.min.js"></script>
     <script src="script.js" defer></script>
     <script src="modo_oscuro.js" defer></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style_procedimientos.css">
-</head>
-<body class="p-5">
-    <header>
-        <div class="container">
-            <a href="index.html">Inicio</a>
-            <a href="codigos.html">Códigos</a>
-            <button id="toggle-theme" class="btn btn-secondary float-right">Cambiar a modo oscuro</button>
-        </div>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style_procedimientos.css" />
+  </head>
+  <body class="p-5">
+    <header class="container">
+      <a href="index.html">Inicio</a>
+      <a href="codigos.html">Códigos</a>
+      <button id="toggle-theme" class="btn btn-secondary float-right">
+        ☀️
+      </button>
     </header>
     <div class="container">
-        <h1>Procedimientos e Información General</h1>
-        <div class="form-group">
-            <label for="mySelect" class="form-label">Elige una opción</label>
-            <select class="form-control" id="mySelect">
-                <option selected disabled>Seleccione una opción...</option>
-                <option value="Derechos_persona">Derechos Individuales</option>
-                <option value="Derechos_personas">Derechos Grupo</option>
-                <option value="Condiciones_negociar">Romper Negociaciones</option>
-            </select>
-        </div>
-        <p id="myText" class="mt-3"></p>
+      <h1>Procedimientos e Información General</h1>
+      <div class="form-group">
+        <label for="mySelect" class="form-label">¿Qué estás buscando?</label>
+        <select class="form-control" id="mySelect">
+          <option selected disabled>Seleccione una opción...</option>
+          <option value="Derechos_persona">Derechos Individuales</option>
+          <option value="Derechos_personas">Derechos Grupo</option>
+          <option value="Condiciones_negociar">Romper Negociaciones</option>
+        </select>
+      </div>
+      <p id="myText" class="mt-3"></p>
     </div>
     <script src="themeToggle.js"></script>
-</body>
+  </body>
 </html>

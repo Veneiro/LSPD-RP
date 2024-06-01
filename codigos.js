@@ -128,9 +128,9 @@ function displayResults(results) {
       const resultElement = document.createElement("div");
       resultElement.classList.add("result");
       resultElement.innerHTML = `
-      <div style="border: 1px solid #ddd; margin: 10px 0; padding: 10px; border-radius: 5px;">
-        <h3 style="margin: 0;">${result.code}</h3>
-        <p style="margin: 0;">${result.description}</p>
+      <div class="codeblock">
+        <h3>${result.code}</h3>
+        <p>${result.description}</p>
       </div>
       `;
   

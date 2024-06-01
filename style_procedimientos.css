@@ -3,11 +3,11 @@ body {
 }
 header {
     background-color: #f8f9fa;
-    padding: 10px 0;
-    margin-bottom: 20px;
+    padding: 0.5em 0;
+    margin-bottom: 1.5em;
 }
 header a {
-    margin: 0 10px;
+    margin: 0 0.5em;
     color: #333;
 }
 h1 {
@@ -25,4 +25,21 @@ body.dark-mode header {
 
 body.dark-mode a {
     color: #ddd;
+}
+
+header.container {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+button#toggle-theme {
+    background-color: #a0ceff;
+    height: 100%;
+    margin-left: auto;
+}
+
+body.dark-mode button#toggle-theme {
+    background-color: #333;
+    color: #fff;
 }
