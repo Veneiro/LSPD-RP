@@ -3,8 +3,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   fetch("./header.html")
     .then((response) => response.text())
-    .then((data) => (headerContainer.innerHTML = data));
-  // Dispara un evento personalizado para indicar que el encabezado se ha cargado
-  const headerLoadedEvent = new Event("headerLoaded");
-  window.dispatchEvent(headerLoadedEvent);
+    .then((data) => {
+      headerContainer.innerHTML = data;
+      // Dispara un evento personalizado para indicar que el encabezado se ha cargado
+      const headerLoadedEvent = new Event("headerLoaded");
+      window.dispatchEvent(headerLoadedEvent);
+    });
 });
