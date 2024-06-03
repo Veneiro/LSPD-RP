@@ -1,4 +1,5 @@
 # LSPD RP Notes
+[![Netlify Status](https://api.netlify.com/api/v1/badges/edff4163-b862-4f27-aa45-b88aff48cce7/deploy-status)](https://app.netlify.com/sites/lspd-notes/deploys)
 ## Introducción
 There you can find notes related to the GTAV Nemesis Community RP Server related to the LSPD (Police) roleplay
 
