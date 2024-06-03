@@ -1,14 +1,12 @@
-window.onload = function() {
-    var select = document.getElementById('mySelect');
-    var text = document.getElementById('myText');
+window.addEventListener("DOMContentLoaded", (event) => {
+  const headerContainer = document.getElementsByClassName("container")[0];
 
-    select.addEventListener('change', function() {
-        var value = select.value;
-
-        fetch('procedimientos/' + value + '.md')
-            .then(response => response.text())
-            .then(content => {
-                text.innerHTML = marked(content);
-            });
+  fetch("./header.html")
+    .then((response) => response.text())
+    .then((data) => {
+      headerContainer.innerHTML = data;
+      // Dispara un evento personalizado para indicar que el encabezado se ha cargado
+      const headerLoadedEvent = new Event("headerLoaded");
+      window.dispatchEvent(headerLoadedEvent);
     });
-}
+});
