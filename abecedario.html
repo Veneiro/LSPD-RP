@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LSPD - Alfabeto Fonético</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked@1.2.9/marked.min.js"></script>
+    <script src="script.js"></script>
+    <script src="abecedario.js" defer></script>
+    <script src="modo_oscuro.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style_codigos.css" />
+  </head>
+  <body class="p-5">
+    <header class="container">
+      
+    </header>
+    <div class="container">
+      <h1>Buscador en Alfabeto Fonético</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input form-control"
+          id="search-input"
+          placeholder="Buscar letra"
+        />
+      </div>
+      <div class="results-container" id="results-container"></div>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+  </body>
+  </html>
