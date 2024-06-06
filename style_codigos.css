@@ -114,3 +114,14 @@ body.dark-mode .close:hover,
 body.dark-mode .close:focus {
   color: #fff;
 }
+
+.searchSelect-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.searchSelect-container .search-input,
+.searchSelect-container .form-control {
+  flex: 1;
+}
