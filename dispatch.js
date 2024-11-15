@@ -11,14 +11,17 @@ window.onload = function() {
     .then(text => {
       // Guardar cada línea del archivo Markdown en un array
       markdownLines = text.split('\n').map(line => {
-        const [code, ...description] = line.split(':');
-        return { code: code.trim(), description: description.join(':').trim() };
+        line = line.trim();
+        const categoryMatch = line.match(/\(([^)]+)\)$/);
+        const category = categoryMatch ? categoryMatch[1].trim() : 'Sin categoría';
+        const cleanLine = categoryMatch ? line.replace(/\(([^)]+)\)$/, '').trim() : line.trim();
+        return { line: cleanLine, category: category };
       });
       
       // Mostrar cada línea del archivo Markdown como un resultado separado
       displayResults(markdownLines);
     })
-    .catch(function() {
+    .catch(function(error) {
       console.log('Hubo un problema con la operación fetch: ' + error.message);
     });
 }
@@ -27,7 +30,7 @@ function removeAccentsAndNonAlphanumeric(str) {
   return str
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\W/g, "");
+    .replace(/[^\w\s]/g, "");
 }
 
 const searchInput = document.getElementById('search-input');
@@ -40,12 +43,9 @@ searchInput.addEventListener("input", () => {
 
   for (const line of markdownLines) {
     if (
-      removeAccentsAndNonAlphanumeric(line.code.toUpperCase()).includes(
+      removeAccentsAndNonAlphanumeric(line.line.toUpperCase()).includes(
         searchTerm
-      ) ||
-      removeAccentsAndNonAlphanumeric(
-        line.description.toUpperCase()
-      ).includes(searchTerm)
+      )
     ) {
       results.push(line);
     }
@@ -53,10 +53,10 @@ searchInput.addEventListener("input", () => {
 
   // Ordenar los resultados originales según la cercanía con el término de búsqueda
   results.sort((a, b) => {
-    const aMatch = a.code
+    const aMatch = a.line
       .toUpperCase()
       .includes(searchInput.value.toUpperCase());
-    const bMatch = b.code
+    const bMatch = b.line
       .toUpperCase()
       .includes(searchInput.value.toUpperCase());
 
@@ -81,16 +81,31 @@ function displayResults(results) {
     return;
   }
 
-  for (const result of results) {
-    const resultElement = document.createElement("div");
-    resultElement.classList.add("result");
-    resultElement.innerHTML = `
-    <div class="codeblock">
-      <h3>${result.code}</h3>
-      <p>${result.description}</p>
-    </div>
-    `;
+  // Agrupar resultados por categoría
+  const groupedResults = results.reduce((acc, result) => {
+    if (!acc[result.category]) {
+      acc[result.category] = [];
+    }
+    acc[result.category].push(result);
+    return acc;
+  }, {});
 
-    resultsContainer.appendChild(resultElement);
+  // Mostrar resultados agrupados por categoría
+  for (const category in groupedResults) {
+    const categoryElement = document.createElement("div");
+    categoryElement.classList.add("category");
+    categoryElement.innerHTML = `<h2>${category}</h2>`;
+    resultsContainer.appendChild(categoryElement);
+
+    for (const result of groupedResults[category]) {
+      const resultElement = document.createElement("div");
+      resultElement.classList.add("result");
+      resultElement.innerHTML = `
+      <div class="codeblock">
+        <p>${result.line}</p>
+      </div>
+      `;
+      categoryElement.appendChild(resultElement);
+    }
   }
 }
